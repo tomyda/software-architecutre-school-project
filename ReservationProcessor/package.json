@@ -1,0 +1,29 @@
+{
+  "name": "reservationprocessor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bull": "^3.22.5",
+    "date-format": "^3.0.0",
+    "dateformat": "^4.5.1",
+    "express": "^4.17.1",
+    "glob": "^7.1.7",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.10",
+    "node-fetch": "^2.6.1",
+    "pm2": "^4.5.6",
+    "redis": "^3.1.2",
+    "util": "^0.12.3",
+    "uuid": "^8.3.2",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start src/index.js -i -1",
+    "stop": "pm2 stop all"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,13 @@
+{
+    "app": {
+        "port": "3011",
+        "address": "http://localhost:3011/"
+    },
+    "mongo_population": {
+        "address": "mongodb+srv://tricolor:SHSY3zSMj86yR04u@cluster0.xyzqc.mongodb.net/population?retryWrites=true&w=majority",
+        "username": "tricolor",
+        "db_name": "population",
+        "driver": "mongodb",
+        "populations_collection": "populations"
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "app": {
+        "name": "Reservation Processor",
+        "port": "3004",
+        "address": "http://localhost:3004/",
+        "algorithm_implementation": "uruguay"
+    },
+    "redis":{
+        "queue_read_channel": "reservations",
+        "host": "127.0.0.1",
+        "port": "6379",
+        "done_reservations_queue": "done_reservations",
+        "pending_reservations_queue": "pending_reservations"
+    },
+    "auth_service": {
+        "service_token": "http://localhost:3001/api/tokens/generate/service"
+    },
+    "admin_service": {
+        "get_address": "http://localhost:3003/api/reservation-validations",
+        "get_endpoints": "http://localhost:3003/api/endpoints"
+    },
+    "id_provider": {
+        "get_address": "http://localhost:3011/api/provider/population"
+    },
+    "notification_service": {
+        "address": "http://localhost:3008/",
+        "notify_pending_address": "http://localhost:3008/api/notificators/pending",
+        "notify_success_address": "http://localhost:3008/api/notificators/successful",
+        "notification_type": "sms_emulator"
+    },
+    "mongo_admin": {
+        "address": "mongodb+srv://tricolor:SHSY3zSMj86yR04u@cluster0.xyzqc.mongodb.net/adminService?retryWrites=true&w=majority",
+        "username": "tricolor",
+        "db_name": "adminService",
+        "driver": "mongodb",
+        "quota_collection": "quota"
+    },
+    "mongo_reservations": {
+        "address": "mongodb+srv://tricolor:SHSY3zSMj86yR04u@cluster0.xyzqc.mongodb.net/reservations?retryWrites=true&w=majority",
+        "username": "tricolor",
+        "db_name": "reservations",
+        "driver": "mongodb",
+        "reservations_collection": "reservations"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "logger": {
+        "implementation": "winston",
+        "level": "info",
+        "transport_error_file": "error.log",
+        "transport_combined_file": "combined.log",
+        "enable_console_logging": true
+    }
+}

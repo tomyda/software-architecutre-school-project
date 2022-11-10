@@ -1,0 +1,18 @@
+{
+    "app": {
+        "port": "3001",
+        "address": "http://localhost:3001/"
+    },
+    "jwt_config": {
+        "secret_key_address": "",
+        "expiration_in_mins": 300
+    },
+    "mongo": {
+        "address": "mongodb+srv://tricolor:SHSY3zSMj86yR04u@cluster0.xyzqc.mongodb.net/arqSoft?retryWrites=true&w=majority",
+        "username": "tricolor",
+        "db_name": "arqSoft"
+    },
+    "redis": {
+        "port": 6379
+    }
+}

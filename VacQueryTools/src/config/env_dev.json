@@ -1,0 +1,12 @@
+{
+    "app": {
+        "port": "3010",
+        "address": "http://localhost:30010/"
+    },
+    "mongo": {
+        "address": "mongodb+srv://tricolor:SHSY3zSMj86yR04u@cluster0.xyzqc.mongodb.net/reservations?retryWrites=true&w=majority",
+        "username": "tricolor",
+        "db_name": "reservations",
+        "reservation_collection": "reservation_collection"
+    }
+}

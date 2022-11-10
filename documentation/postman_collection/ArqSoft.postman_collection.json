@@ -1,0 +1,855 @@
+{
+	"info": {
+		"_postman_id": "c47f3d98-ec9d-4137-b98f-3acbf2887fcd",
+		"name": "ArqSoft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AdminService",
+			"item": [
+				{
+					"name": "Add Places To Vaccination Center",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiY2I1NjdlYzQtYWEyYi00M2Q0LWJlNDctMWJmNDMyNzQzNjMyIiwiYXV0aF9jbGllbnRfaWQiOiJhZG1pbiIsImV4cGlyZV9kYXRlIjoxNjI0NDIxMzgwLCJpYXQiOjE2MjQ0MDMzODB9.IrBOI3Ov4tiyMN50tsYiLg41bjDT9O4LPfRSfSbzCdw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"start_date\": \"2021-01-01\",\n    \"finish_date\": \"2021-12-31\",\n    \"quota\": 100,\n    \"selection_criteria\": \"priority\",\n    \"priority_group\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/vaccination-centers/9f2f3422-475b-469e-a8a7-9346395bb5f3/quota?state=10&zone=7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"vaccination-centers",
+								"9f2f3422-475b-469e-a8a7-9346395bb5f3",
+								"quota"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "dasd",
+									"disabled": true
+								},
+								{
+									"key": "code",
+									"value": "9f2f3422-475b-469e-a8a7-9346395bb5f3",
+									"disabled": true
+								},
+								{
+									"key": "state",
+									"value": "10"
+								},
+								{
+									"key": "zone",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Vaccinated User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMzE1MDVjYzEtNWViYi00OTcyLWJmNDItN2FhNjNlYWFmOTA3IiwiYXV0aF9jbGllbnRfaWQiOiJ2YWNjaW5hdG9yIiwiZXhwaXJlX2RhdGUiOjE2MjQ0MjUyMTIsImlhdCI6MTYyNDQwNzIxMn0.hzFo1ZkOAvdP8Z89GcEYFnP0bjJeOFmb71OX3ZnWU-A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/vaccinated_users?vaccination_center_code=f89e00a7-e733-4dcf-b00d-e3a9c3b7b853&document=95283502&vaccination_date=2020-07-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"vaccinated_users"
+							],
+							"query": [
+								{
+									"key": "vaccination_center_code",
+									"value": "f89e00a7-e733-4dcf-b00d-e3a9c3b7b853"
+								},
+								{
+									"key": "document",
+									"value": "95283502"
+								},
+								{
+									"key": "vaccination_date",
+									"value": "2020-07-31"
+								},
+								{
+									"key": "auth-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMzE1MDVjYzEtNWViYi00OTcyLWJmNDItN2FhNjNlYWFmOTA3IiwiYXV0aF9jbGllbnRfaWQiOiJ2YWNjaW5hdG9yIiwiZXhwaXJlX2RhdGUiOjE2MjQ0MjUyMTIsImlhdCI6MTYyNDQwNzIxMn0.hzFo1ZkOAvdP8Z89GcEYFnP0bjJeOFmb71OX3ZnWU-A",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create vaccination center",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiY2I1NjdlYzQtYWEyYi00M2Q0LWJlNDctMWJmNDMyNzQzNjMyIiwiYXV0aF9jbGllbnRfaWQiOiJhZG1pbiIsImV4cGlyZV9kYXRlIjoxNjI0NDIxMzgwLCJpYXQiOjE2MjQ0MDMzODB9.IrBOI3Ov4tiyMN50tsYiLg41bjDT9O4LPfRSfSbzCdw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"state\":14,\n    \"zone\":39,\n    \"code\":\"31fab733-dd4e-42cf-8986-9efcbe37667d\",\n    \"name\":\"vacunatorio 119\",\n    \"working_hours\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/vaccination-centers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"vaccination-centers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add validations",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiY2I1NjdlYzQtYWEyYi00M2Q0LWJlNDctMWJmNDMyNzQzNjMyIiwiYXV0aF9jbGllbnRfaWQiOiJhZG1pbiIsImV4cGlyZV9kYXRlIjoxNjI0NDIxMzgwLCJpYXQiOjE2MjQ0MDMzODB9.IrBOI3Ov4tiyMN50tsYiLg41bjDT9O4LPfRSfSbzCdw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"validations\": [{\"name\": \"ci-format-validator\",\"type\":\"validation\"}]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/reservation-validations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"reservation-validations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete validations",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiY2I1NjdlYzQtYWEyYi00M2Q0LWJlNDctMWJmNDMyNzQzNjMyIiwiYXV0aF9jbGllbnRfaWQiOiJhZG1pbiIsImV4cGlyZV9kYXRlIjoxNjI0NDIxMzgwLCJpYXQiOjE2MjQ0MDMzODB9.IrBOI3Ov4tiyMN50tsYiLg41bjDT9O4LPfRSfSbzCdw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"validations\": [{\"name\":\"ci-format-validator\"}]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/reservation-validations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"reservation-validations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get validations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiY2I1NjdlYzQtYWEyYi00M2Q0LWJlNDctMWJmNDMyNzQzNjMyIiwiYXV0aF9jbGllbnRfaWQiOiJhZG1pbiIsImV4cGlyZV9kYXRlIjoxNjI0NDIxMzgwLCJpYXQiOjE2MjQ0MDMzODB9.IrBOI3Ov4tiyMN50tsYiLg41bjDT9O4LPfRSfSbzCdw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3003/api/reservation-validations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"reservation-validations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vaccinated Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/vaccinated-users?vaccination_center_code=5b0c571a-d368-4cae-9ef8-ac1b78802cd3&date=2021-01-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"vaccinated-users"
+							],
+							"query": [
+								{
+									"key": "vaccination_center_code",
+									"value": "5b0c571a-d368-4cae-9ef8-ac1b78802cd3"
+								},
+								{
+									"key": "date",
+									"value": "2021-01-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sorted unassigned vaccinations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/pending-vaccines",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"pending-vaccines"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add endpoint",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"endpoint\": \"http://localhost:3008/pending/sms_emulator\",\n    \"service\":\"notificationPending\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/endpoints",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"endpoints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get endpoints",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/api/endpoints",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"endpoints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete endpoint",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"endpoint\": \"http://localhost:3008/pending/sms_emulator\",\n    \"service\":\"notificationPending\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/api/endpoints",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"endpoints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiODBiMDY4ZTAtZmEzYS00ZTFjLTg5NjgtOTdiNjU0NjRmNWU1IiwiYXV0aF9jbGllbnRfaWQiOiJhZG1pbiIsImV4cGlyZV9kYXRlIjoxNjI0NDIxMTU2LCJpYXQiOjE2MjQ0MDMxNTZ9.OarNARKZbJSUgXGLkNgeTkAf6haaTDjc_bRPzzmhQ9k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"full_name\": \"ismael espinosa\",\n    \"email\": \"ismael@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3003/api/admins",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Vaccinator",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiY2I1NjdlYzQtYWEyYi00M2Q0LWJlNDctMWJmNDMyNzQzNjMyIiwiYXV0aF9jbGllbnRfaWQiOiJhZG1pbiIsImV4cGlyZV9kYXRlIjoxNjI0NDIxMDgwLCJpYXQiOjE2MjQ0MDMwODB9.-m_ST7WQ8g1B8ql6JHma7tMQQLhz5gQ7i5ilHzn0bFo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"full_name\": \"ana fernandez\",\n    \"email\": \"ana@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3003/api/admins/vaccinator",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"admins",
+								"vaccinator"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"paula@gmail.com\",\n    \"password\": \"Hola1234!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3003/api/admins/session",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"admins",
+								"session"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log Out",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiY2I1NjdlYzQtYWEyYi00M2Q0LWJlNDctMWJmNDMyNzQzNjMyIiwiYXV0aF9jbGllbnRfaWQiOiJhZG1pbiIsImV4cGlyZV9kYXRlIjoxNjI0NDIxMDE5LCJpYXQiOjE2MjQ0MDMwMTl9.aIcB1tjFSJRyEOU1yRFmOw2swjTfnoBHqjq4Fz3S-90",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3003/api/admins/session",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"api",
+								"admins",
+								"session"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IdentificationService",
+			"item": [
+				{
+					"name": "Get User By documentID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3011/api/provider/population?id=10000064",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3011",
+							"path": [
+								"api",
+								"provider",
+								"population"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "10000064"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VacQueryTools",
+			"item": [
+				{
+					"name": "Query 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3010/api/vacquerytools/query1?from_date=1920-07-31&to_date=2022-08-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"vacquerytools",
+								"query1"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "1920-07-31"
+								},
+								{
+									"key": "to_date",
+									"value": "2022-08-31"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3010/api/vacquerytools/query2?from_date=1920-07-31&to_date=2021-09-31&from_age=18&to_age=25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"vacquerytools",
+								"query2"
+							],
+							"query": [
+								{
+									"key": "from_date",
+									"value": "1920-07-31"
+								},
+								{
+									"key": "to_date",
+									"value": "2021-09-31"
+								},
+								{
+									"key": "from_age",
+									"value": "18"
+								},
+								{
+									"key": "to_age",
+									"value": "25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query 3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3010/api/vacquerytools/query3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"api",
+								"vacquerytools",
+								"query3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth Service",
+			"item": [
+				{
+					"name": "Generate Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"31505cc1-5ebb-4972-bf42-7aa63eaaf907\",\n    \"auth_client_id\": \"superadmin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/tokens/generate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tokens",
+								"generate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMzE1MDVjYzEtNWViYi00OTcyLWJmNDItN2FhNjNlYWFmOTA3IiwiYXV0aF9jbGllbnRfaWQiOiJjbGllbnQiLCJleHBpcmVfZGF0ZSI6MTYyMTg4Mzg4NCwiaWF0IjoxNjIxODY1ODg0fQ.Q7afl8-2mBxvSU2BmlhIEO2BLjk5gqyGSwKWiWUUeF8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/tokens/verify",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tokens",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revoke Token",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjhiZjk3M2QtZTQwYy00OGZhLTljYjEtN2NlMWZkMDFmNDZjIiwiYXV0aF9jbGllbnRfaWQiOiJhZG1pbiIsImV4cGlyZV9kYXRlIjoxNjIyMDc0Nzg4LCJpYXQiOjE2MjIwNTY3ODh9.CIyFF86wFLRmmJzm-XCs59BuD0pGhe7XHqm49cpzGKQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/tokens/revoke",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"tokens",
+								"revoke"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get existing filters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3004/api/filters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3004",
+					"path": [
+						"api",
+						"filters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel reservation",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"document\":\"95283502\",\n    \"reservation_code\":\"0fb08c2c-dc77-4db3-a63f-864445158a82\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3009/api/reservations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3009",
+					"path": [
+						"api",
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get reservation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3009/api/reservations?document=95283502",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3009",
+					"path": [
+						"api",
+						"reservations"
+					],
+					"query": [
+						{
+							"key": "document",
+							"value": "95283502"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

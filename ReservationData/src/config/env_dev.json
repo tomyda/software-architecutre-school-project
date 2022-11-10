@@ -1,0 +1,16 @@
+{
+    "app": {
+        "name": "Receiver Data",
+        "port": "3000",
+        "address": "http://localhost:3000/"
+    },
+    "processor_service": {
+        "register": "http://localhost:3004/api/reservations/register"
+    },
+    "mongo": {
+        "address": "mongodb+srv://tricolor:SHSY3zSMj86yR04u@cluster0.xyzqc.mongodb.net/arqSoft?retryWrites=true&w=majority",
+        "username": "tricolor",
+        "db_name": "arqSoft",
+        "driver": "mongodb"
+    }
+}

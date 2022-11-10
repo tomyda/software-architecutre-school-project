@@ -1,0 +1,45 @@
+{
+    "app": {
+        "port": "3003",
+        "address": "http://localhost:3003/"
+    },
+    "processor_service": {
+        "address": "http://localhost:3004/api/filters"
+    },
+    "auth_service": {
+        "address": "http://localhost:3001/api/tokens/",
+        "verify_address": "http://localhost:3001/api/tokens/verify",
+        "generate_address": "http://localhost:3001/api/tokens/generate",
+        "revoke_address": "http://localhost:3001/api/tokens/revoke"
+    },
+    "jwt_config": {
+        "secret_key_address": "",
+        "expiration_in_mins": 300
+    },
+    "mongo_admin": {
+        "address": "mongodb+srv://tricolor:SHSY3zSMj86yR04u@cluster0.xyzqc.mongodb.net/adminService?retryWrites=true&w=majority",
+        "username": "tricolor",
+        "db_name": "adminService",
+        "driver": "mongodb",
+        "quota_collection": "quota"
+    },
+    "mongo_reservations": {
+        "address": "mongodb+srv://tricolor:SHSY3zSMj86yR04u@cluster0.xyzqc.mongodb.net/reservations?retryWrites=true&w=majority",
+        "username": "tricolor",
+        "db_name": "reservations",
+        "driver": "mongodb",
+        "reservations_collection": "reservations"
+    },
+    "redis": {
+        "port": 6379,
+        "host": "127.0.0.1",
+        "queue_publish_channel": "quota"
+    },
+    "vaccination_center_config": {
+        "max_amount_of_new_quota": 100000,
+        "max_zone_number": 50,
+        "max_state_number": 19,
+        "max_hour_schedule": 2,
+        "max_priority_group": 4
+    }
+}
