@@ -39,71 +39,112 @@
   <a href="#faq">FAQ</a>
 </p>
 
-## Key Services and Features
+## Key Services with features
 
 #### Admin Service
 
+Service in charge of activities that need authentication, such as:
+
+- Creating vaccination centers
+- Keeping track of vaccination centers appointments
+- Managing system validations and endpoints
+- User Sessions (Admins & Healthcare professionals)
+- Marking people as vaccinated
+- Querying people's vaccination status
+  Healthcare professionals also access this service to mark a person as vaccinaated. When new appointments are created, the service equeues in "Quota Updated Queue" and those will be consumed by the Pending Service. This service will assign pending reservations to new appointments.
+
 #### Auth Service
 
-#### IdProviderMock Service
+Service in charge of authentication and authorization. It is used by all other services to validate the user's identity and permissions. It also provides a JWT token to be used by the other services.
+
+It has no exposed endpoints. It is only used by other services in the inside network.
+
+- Generates JWT tokens
+- Validates JWT tokens
+- Revokes JWT tokens
 
 #### Logger
 
+The logger is responsible for logging informative and error logs and adding them to the combined.log and error.log files, respectively. We decided to include the logger as an external library to interfere as little as possible with the code of the applications. To use it, you simply have to run "npm i" inside the logger folder and you will already have two implementations ready to use. New implementations can be easily added by extending the AbstractLogger class and choosing it as the implementation in the configuration file. By implementing the logger in this way, we are fulfilling Req #5, which establishes that the solution must have the possibility of changing the specific tools or libraries used to produce information about failure and error management with the lowest possible cost. If in the future we want to implement the other modules in a different way, they will not be impacted, only the Logger itself is modified.
+
 #### NotificationService
+
+This is the service responsible for notifying users. It will notify users according to the settings configured in the AdminService (sms, whatsapp, email, etc.).
 
 #### PendingService
 
-#### ReservationData
+This is the service responsible for processing new spots for existing vaccination centers in order to try to schedule reservations on the waiting list and assign them a vaccination center.
 
 #### ReservationEmitter
 
+This is the service in charge of consuming validated reservations from the queues of accepted and pending reservations.
+
+- It stores these reservations in the database.
+- It is responsible for allowing users to cancel a reservation or check the status of their reservation.
+
 #### ReservationProcessor
 
+Service in charge of receiving and processing vaccination reservations.
+
+- When a reservation request arrives, it is responsible for performing the corresponding validations and transformations.
+- It looks for an assignable vaccination center based on the determined criteria.
+  - If it finds a vaccination center for the reservation, it subtracts one spot from the vaccination center and adds the reservation to the queue of accepted reservations.
+  - If it does not find a vaccination center, it adds the reservation to the queue of pending reservations to wait for new spots.
+  - The Reservation Emitter Service will consume both queues to continue. This service also exposes an endpoint that allows users with the necessary privileges (through the AdminService) to know the existing validations and transformations.
+
 #### VacQueryTools
+
+This is the service that the media, the public, or system administrators access to make inquiries about the vaccination process.
+
+</br>
+
+## Databases & Persisting Structures
+
+#### Admin Service
+
+This is the database responsible for storing data related to system settings. It stores:
+
+- The history of spots that have been assigned to vaccination centers
+- Users who need authentication (administrators, vaccinators)
+- Vaccination centers
+- The corresponding validations and transformations for the country
+- Third-party endpoints to be used (notifications, validation against the identification provider, etc.)
+
+#### Reservations Database
+
+This is the database responsible for storing user reservations. It stores both pending and completed reservations.
+
+#### Quota Update Queue
+
+This is the queue where new available spots for vaccination centers added from the Admin Service are added. This queue is consumed by the Pending service, which will try to assign pending reservations to these new spots.
+
+#### Accepted Reservations Queue
+
+This is the queue where reservations that have been accepted by the Reservation Processor Service are added. This queue is consumed by the Reservation Emitter Service, which will store the reservations in the database and allow users to check their status.
+
+#### Pending Reservations Queue
+
+This is the queue where pending reservations (those for which no vaccination center was found) are added. These reservations must be persisted as pending in the Reservation Database by the Reservation Emitter (the service that consumes the queue).
+
+#### Whitelisted tokens redis
+
+This is the redis database where the tokens that have been validated by the Auth Service are stored. This is used to validate the user's identity and permissions.
 
 </br>
 
 ## Dependencies
 
-#### Admin Service
-
 - uuid (used for generating vaccination center uuid -"code"-)
 - generate-password (used for generating admins random, secure, password)
 - bcryptjs (used for hashing user password -for security-)
 - validator (used for validating email structurally)
-
-#### Auth Service
-
 - express (for server)
 - mongoose (for mongodb connection)
 - nodemon (for faster/easyer development)
-- validator (for validations)
 - jsonwebtoken (for jwt generation and validation)
-- uuid (for unique identifiers)
 - redis (for storing tokens -as a white list-)
 - stringify (for converting objects to string -for saving them to redis-)
-
-#### IdProviderMock Service
-
-#### Logger
-
-#### NotificationService
-
-#### PendingService
-
-#### ReservationData
-
-- mongoose (for mongodb connection, saving reservations db)
-- nodemon (for faster/easyer development)
 - node-fetch (for requesting the receiver service)
-
-#### ReservationEmitter
-
-#### ReservationProcessor
-
-#### VacQueryTools
-
-#### Auth Service
 
 </br>
 
