@@ -164,6 +164,7 @@ We will detail the instructions in order to run the service using the cloud-host
    4. NotificationService
    5. ReservationEmitter
    6. ReservationProcessor
+5. Download the postman collection located on `./documentation/postman_collection`
 
 Extra) If you want to use: VacQueryTools or Pending Service, just stand at root level and with a new terminal window inside ReservationData folder execute `node index.js`. If you want to regulate data throughput, you can by changing parameters in method `getReservations` inside the controller of ReservationData.
 
